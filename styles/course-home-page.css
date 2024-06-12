@@ -1,0 +1,348 @@
+
+:root{
+    --clr-primary: #325820;
+    --clr-secondary: #14bb1d;
+    --clr-accent1: #ffffff;
+    --clr-accent2: #000000;
+    --ff-header: Roboto;
+    --ff-paragraph: Poppins;
+    --fw-regular: 300;
+    --fw-semi-bold: 400;
+    --fw-bold: 500;
+}
+
+*, *::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif, var(--ff-header);
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* -----------HEADER STYLING---------- */
+header{
+    height: auto;
+    width: 100%;
+    background-color: var(--clr-primary);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.about-me{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    margin: 20px auto;
+}
+
+.about-me img{
+    height: 100px;
+    width: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+ 
+}
+
+.about-me h1{
+    color: var(--clr-accent1);
+    font-size: 1.8em;
+
+}
+
+@media screen and (min-width: 40rem) {
+    .about-me{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        max-height: 80%;
+        margin-inline: 150px;
+        
+    }
+
+    .about-me img{
+        box-shadow: 1px 5px 10px 5px var(--clr-accent2);
+    }
+}
+
+/* -------------NAV SECTION----------- */
+
+.hamburger{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    margin: 10px;
+    margin-top: 5px;
+
+}
+
+/* .hamburger::after{
+    content: "X";
+    position: absolute;
+    top: 0;
+    right: 5px;
+    margin: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    background-color: var(--clr-primary);
+   font-size: 30px;
+   color: white;
+} */
+
+
+.hamburger .bar{
+    display: flex;
+    flex-direction: column;
+    height: 3px;
+    width: 25px;
+    margin: 8px auto;
+    background-color: var(--clr-accent1);
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--clr-accent2);
+    
+}
+
+.menuLinks:active{
+    display: flex;
+}
+
+.menuLinks{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+   
+}
+.menuLinks li{
+    list-style: none;
+    margin-bottom: 20px;
+   
+}
+
+/* .menuLinks li.current a{
+   color: var(--clr-secondary);
+
+} */
+
+.menuLinks li a{
+    color: var(--clr-accent1);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+@media screen and (min-width: 40rem) {
+    .hamburger{
+        display: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        background-color: var(--clr-accent2);
+        width: 100%;
+       
+        
+    }
+    .menuLinks{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        margin: 15px 50px 0;
+    }
+
+    
+    .menuLinks li{
+        padding: 10px;
+    }
+    .menuLinks li:hover{
+        background-color: var(--clr-secondary);
+        color: var(--clr-accent2);
+        border-radius: 5px;
+    }
+
+    .menuLinks li.current{
+        background-color: var(--clr-secondary);
+        color: var(--clr-accent1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+
+/* ------------DOUBLE SECTION----------------- */
+
+.doubleSection{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px auto;
+    width: min(90%, 80rem);
+    border-radius: 20px;
+    height: auto;
+    margin-bottom: 0;    
+}
+
+.courseWork, .country{
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-block: 10px;
+     
+}
+
+.itemHeader{
+    margin-top:0 ;
+    background-color: var(--clr-primary);
+    padding: 10px;
+    align-content: center;
+    color: var(--clr-accent1);
+    width: 100%;
+    margin-bottom: 5px;
+   
+}
+
+.countryImg{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+    overflow: hidden;
+    object-fit:cover;
+}
+
+.countryImg p{
+    color: var(--clr-accent2);
+}
+
+@media screen and (min-width:40rem) {
+    .doubleSection{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        width: min(90%, 80rem);
+        border-radius: 20px;
+        height: auto;  
+    }
+
+    .courseWork, .country{
+        box-shadow: 1px 0px 5px 2px var(--clr-accent2);
+    }
+    .courseWork{
+        width: min(60%, 80rem);
+    }
+    .country{
+        width: min(40%, 80rem);
+    }
+}
+
+/* ----------------CERTIFICATE--------------- */
+.certificate{
+        border-radius: 10px;
+        width: 100%;
+        margin-block: 10px;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        margin: 15px auto;
+        width: min(90%, 80rem);
+        overflow: hidden;
+        text-align: center;
+}
+
+.courseTypesContainer{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+   margin: 5px auto;
+   padding: 5px;
+border-bottom: 1px solid var(--clr-primary);
+}
+.courseTypesContainer .courseType{
+    background-color: var(--clr-accent2);
+    color: var(--clr-accent1);
+    margin: 0 10px;
+    padding: .4em;
+    border-radius: 5px;
+
+}
+
+.courseContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+
+}
+
+.courseContainer .courses{
+    color: var(--clr-accent2);
+    background-color: var(--clr-accent1);
+    padding: 8px 50px;
+    margin-block: 5px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid var(--clr-primary);
+}
+
+.courseContainer .courses.taken{
+    background-color: #14bb1d;
+    color: var(--clr-accent1);
+}
+
+@media screen and (min-width: 40rem) {
+
+  .courseContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+    padding: 0 ;
+    gap: 3px;
+    justify-content: center;
+
+}
+    .courseContainer .courses{
+        padding: 0 150px;
+        margin: 5px 20px;
+  
+    }
+
+}
+
+/* -----------FOOTER------------- */
+footer{
+    background-color: var(--clr-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    color: var(--clr-accent1);}
+    
+.eduimage{
+    width: 15px;
+    height: 15px;
+    border-radius:5px;}
+
+.icon{
+    padding: 5px;
+    margin: 5px;
+}
