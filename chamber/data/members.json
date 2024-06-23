@@ -1,0 +1,78 @@
+[
+    {
+        "name": "SAREX",
+        "address": "17, Ligali, Lagos state, Nigeria",
+        "phone": "+123456789",
+        "website": "https://sarex.com",
+        "image": "commerce1.jpg",
+        "membership": 1,
+        "description": "A very reputable fitness hub that ensures healthy life for people of all age level."
+    },
+    {
+        "name": "Ivorian hub",
+        "address": "456 Market St, Abuja, Nigeria",
+        "phone": "+987654321",
+        "website": "https://companyb.com",
+        "image": "commerce2.jpg",
+        "membership": 2,
+        "description": "Dealers in all kind of inported fruits."
+    },
+    {
+        "name": "Wise buyers",
+        "address": "789 High St, Magboro, Ogun",
+        "phone": "+1122334455",
+        "website": "https://companyc.com",
+        "image": "commerce3.jpg",
+        "membership": 3,
+        "description": "The right hub for your business."
+    },
+    {
+        "name": "Farm fresh",
+        "address": "101 Second St, City, Nigeria",
+        "phone": "+2233445566",
+        "website": "https://companyd.com",
+        "image": "commerce4.jpg",
+        "membership": 1,
+        "description": "The sure plug for fruits and veggies."
+    },
+    {
+        "name": "Imilokan",
+        "address": "202 Third St, City, Country",
+        "phone": "+3344556677",
+        "website": "https://emilokan.com",
+        "image": "commerce5.jpg",
+        "membership": 2,
+        "description": "Youre the next lucky one."
+    },
+    {
+        "name": "Dr fruit",
+        "address": "101 Second St, City, Country",
+        "phone": "+2233445566",
+        "website": "https://drfruits.com",
+        "image": "commerce6.jpg",
+        "membership": 1,
+        "description": "Your luck one here."
+    },
+    {
+        "name": "Tratorit",
+        "address": "202 Third St, City, Country",
+        "phone": "+3344556677",
+        "website": "https://companye.com",
+        "image": "commerce7.jpg",
+        "membership": 2,
+        "description": "Description of Company E."
+    }
+    ,
+    {
+        "name": "Fruities",
+        "address": "101 Second St, City, Country",
+        "phone": "+2233445566",
+        "website": "https://companyd.com",
+        "image": "commerce8.jpg",
+        "membership": 1,
+        "description": "Description of Company D."
+    }
+  
+]
+
+

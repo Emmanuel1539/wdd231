@@ -1,0 +1,230 @@
+
+
+:root{
+    --primary: rgb(76, 113, 125);
+    --secondary: rgb(9, 157, 9);
+    --accent1: white;
+    --accent2: black;
+}
+
+*, *::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--accent1);
+    position: relative;
+}
+
+.logo__img{
+    margin: .75rem;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo__img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.menu__links {
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+}
+
+.menu__links li{
+    list-style: none;
+    margin: 1rem;
+}
+
+.menu__links li a:hover{
+    background-color: var(--accent1);
+    color: var(--secondary);
+    border-radius: 10px;
+}
+
+.menu__links li a{
+    text-decoration: none;
+    color: var(--accent1);
+    padding: 1rem;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.hamburger{
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger .bar{
+    height: 3px;
+    width: 100%;
+    background-color: var(--accent1);
+}
+
+.business__card__container{
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
+    gap: 1rem;
+    margin: clamp(3rem, 5rem, 7rem );
+}
+
+@media (max-width: 720px){
+    .hamburger{
+        display: flex;
+    }
+
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    header h2{
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        z-index: 1;
+        left: 120px;
+       
+    }
+
+    .menu__links{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transition: all .3s ease-in-out;
+    }
+
+    .menu__links li a{
+        padding: .75rem 1rem;
+    }
+
+
+    .menu__links{
+        display: none;
+    }
+    
+    .menu__links.active{
+        display: flex;
+    }
+    
+    #mobile-menu{
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        transform: translate(5%, 20%);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+/* ---------SECTION--------- */
+
+.business__names{
+
+}
+.header_div {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+
+#membersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+}
+
+.memberCard {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    text-align: center;
+}
+
+.list .memberCard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list .memberCard img {
+    display: none;
+}
+
+.memberCard img {
+    width: 250px;
+    height: 200px ;
+}
+
+.memberCard a{
+    text-decoration: none;
+    color: var(--accent2);
+}
+
+#toggleView {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    color: var(--accent1);
+}
+
+
+
+
+
+
+/* -----------FOOTER------------- */
+footer{
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    color: var(--accent1);
+    height: 150px;
+    margin-top: 40px;
+}
+    
+.eduimage{
+    width: 15px;
+    height: 15px;
+    border-radius:5px;}
+
+.icon{
+    padding: 5px;
+    margin: 5px;
+}
