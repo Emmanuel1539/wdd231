@@ -23,7 +23,8 @@ hamburger.addEventListener('click', function (){
 
  document.addEventListener('DOMContentLoaded', () => {
     const membersContainer = document.getElementById('membersContainer');
-    const toggleViewButton = document.getElementById('toggleView');
+    const gridViewButton = document.getElementById('gridView');
+    const listViewButton = document.getElementById('listView');
     const copyrightYear = document.getElementById('copyrightYear');
     const lastModified = document.getElementById('lastModified');
 
@@ -45,7 +46,7 @@ hamburger.addEventListener('click', function (){
             const memberCard = document.createElement('div');
             memberCard.classList.add('memberCard');
             memberCard.innerHTML = `
-                <img src="./images/${member.image}" alt="${member.name}">
+                <img loading = 'lazy' width= 250  src="./images/${member.image}" alt="${member.name}">
                 <h2>${member.name}</h2>
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
@@ -58,10 +59,23 @@ hamburger.addEventListener('click', function (){
     }
 
     // Toggle between grid and list views
-    toggleViewButton.addEventListener('click', () => {
-        membersContainer.classList.toggle('grid');
-        membersContainer.classList.toggle('list');
+    gridViewButton.addEventListener('click', () => {
+        membersContainer.classList.add('grid');
+        membersContainer.classList.remove('list');
+        gridViewButton.style.backgroundColor = '#ffffff';
+        gridViewButton.style.color = 'var(--accent2)';
+        listViewButton.style.backgroundColor = 'var(--primary)';
+        listViewButton.style.color = '#ffffff';
     });
+
+    listViewButton.addEventListener('click', () => {
+        membersContainer.classList.add('list');
+        membersContainer.classList.remove('grid');
+        listViewButton.style.backgroundColor = '#ffffff';
+        listViewButton.style.color = 'var(--accent2)';
+        gridViewButton.style.backgroundColor = 'var(--primary)';
+        gridViewButton.style.color = '#ffffff';
+    })
 
 
     // Fetch and display members on page load

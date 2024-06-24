@@ -23,6 +23,11 @@ header{
     position: relative;
 }
 
+header h2{
+   
+    font-size: 1.8rem;
+}
+
 .logo__img{
     margin: .75rem;
     background-size: cover;
@@ -100,9 +105,10 @@ header{
     header h2{
         align-items: center;
         position: absolute;
-        top: 80px;
+        top: 50px;
         z-index: 1;
-        left: 120px;
+        left: 160px;
+        font-size: 1.2rem;
        
     }
 
@@ -147,9 +153,6 @@ header{
 }
 /* ---------SECTION--------- */
 
-.business__names{
-
-}
 .header_div {
     text-align: center;
     margin: 20px 0;
@@ -166,7 +169,7 @@ header{
 }
 
 .memberCard {
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     padding: 10px;
     width: 300px;
     height: auto;
@@ -184,16 +187,13 @@ header{
 }
 
 .memberCard img {
-    width: 250px;
+    width: 100%;
     height: 200px ;
 }
 
-.memberCard a{
-    text-decoration: none;
-    color: var(--accent2);
-}
 
-#toggleView {
+
+button {
     margin: 20px;
     padding: 10px 20px;
     background-color: var(--primary);
@@ -217,6 +217,7 @@ footer{
     color: var(--accent1);
     height: 150px;
     margin-top: 40px;
+    font-size: 1.5rem;
 }
     
 .eduimage{

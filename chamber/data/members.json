@@ -4,7 +4,7 @@
         "address": "17, Ligali, Lagos state, Nigeria",
         "phone": "+123456789",
         "website": "https://sarex.com",
-        "image": "commerce1.jpg",
+        "image": "commerce1.webp",
         "membership": 1,
         "description": "A very reputable fitness hub that ensures healthy life for people of all age level."
     },
@@ -13,7 +13,7 @@
         "address": "456 Market St, Abuja, Nigeria",
         "phone": "+987654321",
         "website": "https://companyb.com",
-        "image": "commerce2.jpg",
+        "image": "commerce2.webp",
         "membership": 2,
         "description": "Dealers in all kind of inported fruits."
     },
@@ -22,7 +22,7 @@
         "address": "789 High St, Magboro, Ogun",
         "phone": "+1122334455",
         "website": "https://companyc.com",
-        "image": "commerce3.jpg",
+        "image": "commerce3.webp",
         "membership": 3,
         "description": "The right hub for your business."
     },
@@ -31,7 +31,7 @@
         "address": "101 Second St, City, Nigeria",
         "phone": "+2233445566",
         "website": "https://companyd.com",
-        "image": "commerce4.jpg",
+        "image": "commerce4.webp",
         "membership": 1,
         "description": "The sure plug for fruits and veggies."
     },
@@ -40,7 +40,7 @@
         "address": "202 Third St, City, Country",
         "phone": "+3344556677",
         "website": "https://emilokan.com",
-        "image": "commerce5.jpg",
+        "image": "commerce5.webp",
         "membership": 2,
         "description": "Youre the next lucky one."
     },
@@ -49,7 +49,7 @@
         "address": "101 Second St, City, Country",
         "phone": "+2233445566",
         "website": "https://drfruits.com",
-        "image": "commerce6.jpg",
+        "image": "commerce6.webp",
         "membership": 1,
         "description": "Your luck one here."
     },
@@ -58,9 +58,9 @@
         "address": "202 Third St, City, Country",
         "phone": "+3344556677",
         "website": "https://companye.com",
-        "image": "commerce7.jpg",
+        "image": "commerce7.webp",
         "membership": 2,
-        "description": "Description of Company E."
+        "description": "Your partner in the field."
     }
     ,
     {
@@ -68,9 +68,9 @@
         "address": "101 Second St, City, Country",
         "phone": "+2233445566",
         "website": "https://companyd.com",
-        "image": "commerce8.jpg",
+        "image": "commerce8.webp",
         "membership": 1,
-        "description": "Description of Company D."
+        "description": "Enjoy your freshy fruits."
     }
   
 ]
