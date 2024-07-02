@@ -5,6 +5,7 @@
         "phone": "+123456789",
         "website": "https://sarex.com",
         "image": "commerce1.webp",
+        "imageDesc": "fruits store",
         "membership": 1,
         "description": "A very reputable fitness hub that ensures healthy life for people of all age level."
     },
@@ -14,6 +15,7 @@
         "phone": "+987654321",
         "website": "https://companyb.com",
         "image": "commerce2.webp",
+        "imageDesc": "tubber food seller in her shop",
         "membership": 2,
         "description": "Dealers in all kind of inported fruits."
     },
@@ -23,6 +25,7 @@
         "phone": "+1122334455",
         "website": "https://companyc.com",
         "image": "commerce3.webp",
+        "imageDesc": "pepper store",
         "membership": 3,
         "description": "The right hub for your business."
     },
@@ -32,6 +35,7 @@
         "phone": "+2233445566",
         "website": "https://companyd.com",
         "image": "commerce4.webp",
+        "imageDesc": "green veggie hydroponic",
         "membership": 1,
         "description": "The sure plug for fruits and veggies."
     },
@@ -41,6 +45,7 @@
         "phone": "+3344556677",
         "website": "https://emilokan.com",
         "image": "commerce5.webp",
+        "imageDesc": "layer birds",
         "membership": 2,
         "description": "Youre the next lucky one."
     },
@@ -50,6 +55,7 @@
         "phone": "+2233445566",
         "website": "https://drfruits.com",
         "image": "commerce6.webp",
+        "imageDesc": "a maize farm",
         "membership": 1,
         "description": "Your luck one here."
     },
@@ -59,6 +65,7 @@
         "phone": "+3344556677",
         "website": "https://companye.com",
         "image": "commerce7.webp",
+        "imageDesc": "tractor in the farm",
         "membership": 2,
         "description": "Your partner in the field."
     }
@@ -69,6 +76,7 @@
         "phone": "+2233445566",
         "website": "https://companyd.com",
         "image": "commerce8.webp",
+        "imageDesc": "onion farm",
         "membership": 1,
         "description": "Enjoy your freshy fruits."
     }
