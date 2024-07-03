@@ -120,7 +120,7 @@ function displayCurrentWeather(data) {
         <div class="info__wrapper emoji__weather">
             <div class="current__weather__emoji">🌡️</div>
             <div class="current__weather__info">
-                <p><span class="temp">${temperature}°F</span></p>
+                <p><span class="temp bold">${temperature}°F</span></p>
                 <p>${weatherDescriptions}</p>
                 <p>High: ${Math.round(data.main.temp_max)}°F</p>
                 <p>Low: ${Math.round(data.main.temp_min)}°F</p>
