@@ -85,116 +85,97 @@
 });
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    fetchWeatherData();
+    loadBusinessSpotlights();
+    updateCurrentYear();
+});
+
+async function fetchWeatherData() {
     const apiKey = 'beaef9bdf45d13ece1411b2df3be247c';
-    const lat = 'LATITUDE'; // Replace with actual latitude
-    const lon = 'LONGITUDE'; // Replace with actual longitude
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    const location = 'Lagos';  
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`;
 
-    // Fetch weather data
-    async function fetchWeatherData() {
-        try {
-            const response = await fetch(weatherUrl);
-            const data = await response.json();
-            displayCurrentWeather(data.current);
-            displayForecast(data.daily);
-        } catch (error) {
-            console.error('Error fetching weather data:', error);
-        }
+    try {
+        const weatherResponse = await fetch(weatherUrl);
+        const weatherData = await weatherResponse.json();
+
+        const forecastResponse = await fetch(forecastUrl);
+        const forecastData = await forecastResponse.json();
+
+        displayCurrentWeather(weatherData);
+        displayWeatherForecast(forecastData);
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
     }
+}
 
-    // Display current weather
-    function displayCurrentWeather(current) {
-        const weatherDescription = current.weather.map(w => capitalizeWords(w.description)).join(', ');
-        const temperature = Math.round(current.temp);
+function displayCurrentWeather(data) {
+    const currentWeatherContainer = document.getElementById('currentWeather');
+    const temperature = Math.round(data.main.temp);
+    const weatherDescriptions = data.weather.map(event => capitalizeWords(event.description)).join(', ');
 
-        document.getElementById('current-weather').innerHTML = `
-            <div class="info__wrapper emoji__weather">
-                <div class="current__weather__emoji">🌤️</div>
-                <div class="current__weather__info">
-                    <p><span class="temp">${temperature}°C</span></p>
-                    <p>${weatherDescription}</p>
-                    <p>High: ${Math.round(current.temp_max)}°</p>
-                    <p>Low: ${Math.round(current.temp_min)}°</p>
-                    <p>Humidity: ${current.humidity}%</p>
-                    <p>Sunrise: ${new Date(current.sunrise * 1000).toLocaleTimeString()}</p>
-                    <p>Sunset: ${new Date(current.sunset * 1000).toLocaleTimeString()}</p>
-                </div>
+    currentWeatherContainer.innerHTML = `
+        <div class="info__wrapper emoji__weather">
+            <div class="current__weather__emoji">🌡️</div>
+            <div class="current__weather__info">
+                <p><span class="temp">${temperature}°F</span></p>
+                <p>${weatherDescriptions}</p>
+                <p>High: ${Math.round(data.main.temp_max)}°F</p>
+                <p>Low: ${Math.round(data.main.temp_min)}°F</p>
+                <p>Humidity: ${data.main.humidity}%</p>
+                <p>Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</p>
+                <p>Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}</p>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
 
-    // Display 3-day forecast
-    function displayForecast(daily) {
-        let forecastHtml = '';
-        for (let i = 1; i <= 3; i++) {
-            const day = daily[i];
-            const date = new Date(day.dt * 1000).toLocaleDateString();
-            const temp = Math.round(day.temp.day);
-            forecastHtml += `<p>${date}: <span class="bold">${temp}°C</span></p>`;
-        }
-        document.getElementById('forecast').innerHTML = forecastHtml;
-    }
+function displayWeatherForecast(data) {
+    const forecastContainer = document.getElementById('weatherForecast');
+    const forecastDays = data.list.filter((entry, index) => index % 8 === 0).slice(0, 3);
 
-    // Capitalize each word in a string
-    function capitalizeWords(str) {
-        return str.replace(/\b\w/g, char => char.toUpperCase());
-    }
+    forecastContainer.innerHTML = forecastDays.map(day => `
+        <p>${new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' })}: <span class="bold">${Math.round(day.main.temp)}°F</span></p>
+    `).join('');
+}
 
-    // Fetch and display chamber members
-    async function fetchMembers() {
-        try {
-            const response = await fetch('members.json');
-            const members = await response.json();
-            const goldSilverMembers = members.filter(member => member.membership === 'gold' || member.membership === 'silver');
-            displayRandomMembers(goldSilverMembers);
-        } catch (error) {
-            console.error('Error fetching members data:', error);
-        }
-    }
+function capitalizeWords(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
 
-    // Display random members
-    function displayRandomMembers(members) {
-        shuffleArray(members);
-        const selectedMembers = members.slice(0, 3);
-        let membersHtml = '';
-        selectedMembers.forEach(member => {
-            membersHtml += `
+function loadBusinessSpotlights() {
+    const businessSpotlightContainer = document.getElementById('businessSpotlight');
+    fetch('data/members.json')
+        .then(response => response.json())
+        .then(data => {
+            const eligibleMembers = data.filter(member => member.membership === 1 || member.membership === 2);
+            const randomMembers = eligibleMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            businessSpotlightContainer.innerHTML = randomMembers.map(member => `
                 <div class="business__card">
                     <div class="business__card__name">
                         <h3>${member.name}</h3>
-                        <p>...${member.tagline}</p>
+                        <p>...${member.description}</p>
                     </div>
                     <div class="business__card__info">
                         <div class="card__img">
-                            <img src="${member.image}" alt="">
+                            <img src="/chamber/images/${member.image}" alt="${member.imageDesc}">
                         </div>
                         <div class="card__info">
-                            <p><span class="bold">Email:</span> ${member.email}</p>
+                            <p><span class="bold">Email:</span> ${member.address}</p>
                             <p><span class="bold">Phone:</span> ${member.phone}</p>
-                            <p><span class="bold">URL:</span> ${member.url}</p>
+                            <p><span class="bold">URL:</span> <a href="${member.website}" target="_blank">${member.website}</a></p>
                         </div>
                     </div>
                 </div>
-            `;
-        });
-        document.getElementById('company-spotlights').innerHTML = membersHtml;
-    }
+            `).join('');
+        })
+        .catch(error => console.error('Error loading business spotlights:', error));
+}
 
-    // Shuffle array (Fisher-Yates algorithm)
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-
-    // Initialize the page
-    function init() {
-        fetchWeatherData();
-        fetchMembers();
-    }
-
-    init();
-});
+function updateCurrentYear() {
+    document.getElementById('currentyear').textContent = new Date().getFullYear();
+    document.getElementById('lastmodified').textContent = document.lastModified;
+}
