@@ -1,22 +1,16 @@
-
-
-
- document.addEventListener('DOMContentLoaded', () => {
-
-
-
+document.addEventListener('DOMContentLoaded', () => {
     const membersContainer = document.getElementById('membersContainer');
     const gridViewButton = document.getElementById('gridView');
     const listViewButton = document.getElementById('listView');
     const hamburger = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.menu__links');
 
-    // toggle menulinks
-    hamburger.addEventListener('click', function (){
+    // Toggle menu links
+    hamburger.addEventListener('click', function () {
         hamburger.classList.toggle('is-active');
         menuLinks.classList.toggle('active');
     });
-    
+
     // Fetch and display members
     async function fetchMembers() {
         try {
@@ -35,7 +29,7 @@
             const memberCard = document.createElement('div');
             memberCard.classList.add('memberCard');
             memberCard.innerHTML = `
-                <img loading = 'lazy' width= 250 height= "250" src="./images/${member.image}" alt="${member.imageDesc}">
+                <img loading="lazy" width="250" height="250" src="./images/${member.image}" alt="${member.imageDesc}">
                 <h2>${member.name}</h2>
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
@@ -64,13 +58,10 @@
         listViewButton.style.color = 'var(--accent2)';
         gridViewButton.style.backgroundColor = 'var(--primary)';
         gridViewButton.style.color = '#ffffff';
-    })
-
+    });
 
     // Fetch and display members on page load
     fetchMembers();
-
-
 
     // Date time and Last modified
     const fullYear = document.querySelector("#currentyear");
@@ -82,15 +73,46 @@
         dateStyle: "full"
     }).format(today)}</span>`;
 
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
+    // Fetch weather data
     fetchWeatherData();
+
+    // Load business spotlights
     loadBusinessSpotlights();
+
+    // Update current year
     updateCurrentYear();
+
+    // Handle form submission
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const timestamp = new Date().toLocaleString();
+        formData.append("timestamp", timestamp);
+
+        const urlParams = new URLSearchParams(formData);
+
+        window.location.href = `thank.html?${urlParams.toString()}`;
+    });
+
+    // Populate thank you page with form data
+    if (window.location.pathname.endsWith("thank.html")) {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        document.getElementById("first_name").textContent = urlParams.get("firstname");
+        document.getElementById("last_name").textContent = urlParams.get("lastname");
+        document.getElementById("email").textContent = urlParams.get("email");
+        document.getElementById("mobile_phone").textContent = urlParams.get("phone");
+        document.getElementById("organization").textContent = urlParams.get("organization");
+        document.getElementById("timestamp").textContent = urlParams.get("timestamp");
+    }
+
+
 });
 
+
+    
 async function fetchWeatherData() {
     const apiKey = 'beaef9bdf45d13ece1411b2df3be247c';
     const location = 'Lagos';  
@@ -179,3 +201,4 @@ function updateCurrentYear() {
     document.getElementById('currentyear').textContent = new Date().getFullYear();
     document.getElementById('lastmodified').textContent = document.lastModified;
 }
+
