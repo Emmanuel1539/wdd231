@@ -1,0 +1,137 @@
+[
+    {
+        "image": "wheat.jpg",
+        "cropType": "Wheat",
+        "roi": "10%",
+        "duration": "short",
+        "description": "Wheat is a versatile crop that matures quickly, providing a stable return on investment.",
+        "maturityMonths": 6,
+        "imageDesc": "Wheat field"
+    },
+    {
+        "image": "corn.jpg",
+        "cropType": "Corn",
+        "roi": "15%",
+        "duration": "short",
+        "description": "Corn is a widely grown crop known for its high yield and quick maturity.",
+        "maturityMonths": 5,
+        "imageDesc": "Corn field"
+    },
+    {
+        "image": "soybean.jpg",
+        "cropType": "Soybeans",
+        "roi": "12%",
+        "duration": "long",
+        "description": "Soybeans are a valuable crop that takes longer to mature but offers a good return on investment.",
+        "maturityMonths": 12,
+        "imageDesc": "Soybean field"
+    },
+    {
+        "image": "rice.jpg",
+        "cropType": "Rice",
+        "roi": "8%",
+        "duration": "short",
+        "description": "Rice is a staple crop that matures quickly and is a reliable investment.",
+        "maturityMonths": 4,
+        "imageDesc": "Rice field"
+    },
+    {
+        "image": "barley.jpg",
+        "cropType": "Barley",
+        "roi": "9%",
+        "duration": "long",
+        "description": "Barley is a resilient crop that takes longer to mature but is a good long-term investment.",
+        "maturityMonths": 10,
+        "imageDesc": "Barley field"
+    },
+    {
+        "image": "oat.jpg",
+        "cropType": "Oats",
+        "roi": "11%",
+        "duration": "short",
+        "description": "Oats mature quickly and provide a steady return on investment.",
+        "maturityMonths": 5,
+        "imageDesc": "Oat field"
+    },
+    {
+        "image": "sugarcane.jpg",
+        "cropType": "Sugarcane",
+        "roi": "14%",
+        "duration": "long",
+        "description": "Sugarcane is a profitable crop with a longer maturity period, ideal for long-term investments.",
+        "maturityMonths": 18,
+        "imageDesc": "Sugarcane field"
+    },
+    {
+        "image": "cotton.jpg",
+        "cropType": "Cotton",
+        "roi": "13%",
+        "duration": "long",
+        "description": "Cotton is a valuable crop with a longer maturity period, providing substantial returns over time.",
+        "maturityMonths": 12,
+        "imageDesc": "Cotton field"
+    },
+    {
+        "image": "tobacco.jpg",
+        "cropType": "Tobacco",
+        "roi": "16%",
+        "duration": "short",
+        "description": "Tobacco matures quickly and offers high returns on investment.",
+        "maturityMonths": 6,
+        "imageDesc": "Tobacco field"
+    },
+    {
+        "image": "sunflower.jpg",
+        "cropType": "Sunflower",
+        "roi": "10%",
+        "duration": "short",
+        "description": "Sunflowers mature quickly and provide a reliable return on investment.",
+        "maturityMonths": 4,
+        "imageDesc": "Sunflower field"
+    },
+    {
+        "image": "peanut.jpg",
+        "cropType": "Peanuts",
+        "roi": "12%",
+        "duration": "long",
+        "description": "Peanuts take longer to mature but are a valuable long-term investment.",
+        "maturityMonths": 12,
+        "imageDesc": "Peanut field"
+    },
+    {
+        "image": "potatoe.jpg",
+        "cropType": "Potatoes",
+        "roi": "15%",
+        "duration": "short",
+        "description": "Potatoes mature quickly and offer good returns on investment.",
+        "maturityMonths": 4,
+        "imageDesc": "Potato field"
+    },
+    {
+        "image": "tomatoe.jpg",
+        "cropType": "Tomatoes",
+        "roi": "17%",
+        "duration": "short",
+        "description": "Tomatoes mature quickly and provide high returns on investment.",
+        "maturityMonths": 3,
+        "imageDesc": "Tomato field"
+    },
+    {
+        "image": "carrot.jpg",
+        "cropType": "Carrots",
+        "roi": "11%",
+        "duration": "short",
+        "description": "Carrots mature quickly and offer steady returns on investment.",
+        "maturityMonths": 4,
+        "imageDesc": "Carrot field"
+    },
+    {
+        "image": "lettuce.jpg",
+        "cropType": "Lettuce",
+        "roi": "14%",
+        "duration": "long",
+        "description": "Lettuce takes longer to mature but is a good long-term investment.",
+        "maturityMonths": 8,
+        "imageDesc": "Lettuce field"
+    }
+]
